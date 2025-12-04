@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aroma Lume – Velas Aromáticas Artesanais</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Velas aromáticas artesanais feitas à mão, com coleções prontas e opções sob encomenda para presentes, casa e eventos.">
+
+  <style>
+    :root {
+      --cor-primaria: #B8C1A9;        /* verde sálvia */
+      --cor-primaria-escura: #5C6652; /* verde musgo escuro */
+      --cor-secundaria: #D4B483;      /* dourado claro */
+      --cor-fundo: #FDF9F5;           /* bege muito claro */
+      --cor-texto: #2C2420;
+      --cor-texto-sec: #7A6A5F;
+      --cor-card: #FFFFFF;
+      --cor-borda: #E8DCC1;
+      --fonte: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--fonte);
+      background: radial-gradient(circle at top, #F7F1EA 0, #FDF9F5 40%, #F3E7D9 100%);
+      color: var(--cor-texto);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--cor-borda);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(253, 249, 245, 0.9);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #FFFFFF 0, #E8DCC1 40%, #B8C1A9 75%);
+      box-shadow: 0 0 14px rgba(92, 102, 82, 0.35);
+      overflow: hidden;
+    }
+
+    /* se tiveres a logo em ficheiro, troca pelo <img> aqui:
+       .brand-mark { background: none; box-shadow: none; }
+       e no HTML usa <img src="aroma-lume-logo.png" alt="Aroma Lume" class="brand-logo"> */
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--cor-texto-sec);
+    }
+
+    .nav-links a:hover {
+      color: var(--cor-primaria-escura);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.7rem 1.3rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+      color: #2C2420;
+      box-shadow: 0 10px 28px rgba(90, 80, 60, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, var(--cor-primaria-escura), var(--cor-secundaria));
+    }
+
+    .btn-outline {
+      border: 1px solid var(--cor-borda);
+      background: #FFFFFFCC;
+      color: var(--cor-texto-sec);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cor-primaria-escura);
+      color: var(--cor-texto);
+      background: #FFF;
+    }
+
+    main {
+      padding-bottom: 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--cor-primaria-escura);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--cor-texto-sec);
+      font-size: 1rem;
+      max-width: 32rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      font-size: 0.85rem;
+      color: var(--cor-texto-sec);
+    }
+
+    .hero-meta strong {
+      color: var(--cor-texto);
+    }
+
+    .hero-card {
+      background: #FFFFFF;
+      border-radius: 18px;
+      padding: 1.7rem 1.6rem;
+      border: 1px solid rgba(216, 196, 170, 0.8);
+      box-shadow: 0 16px 40px rgba(150, 133, 110, 0.28);
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--cor-texto-sec);
+    }
+
+    .hero-card li::before {
+      content: "•";
+      color: var(--cor-secundaria);
+      margin-right: 0.4rem;
+    }
+
+    /* Secções genéricas */
+    section {
+      padding: 3rem 0 0;
+    }
+
+    h2.section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .muted {
+      color: var(--cor-texto-sec);
+      font-size: 0.95rem;
+    }
+
+    /* Prova social / marcas */
+    .logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    .logo-pill {
+      border-radius: 999px;
+      border: 1px dashed var(--cor-borda);
+      padding: 0.7rem 1.2rem;
+      font
